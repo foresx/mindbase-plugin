@@ -7,7 +7,9 @@ allowed-tools: Read Glob Grep
 
 # Search MindBase
 
-Knowledge base path: `~/Documents/MindBase/`
+## Resolve MindBase Path
+
+First, read `~/.claude/plugins/mindbase-settings.json` to get the `mindbase_path`. If the file does not exist, tell the user to run `/kb:setup` first and STOP.
 
 ## Your Task
 

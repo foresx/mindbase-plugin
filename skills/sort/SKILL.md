@@ -8,7 +8,10 @@ allowed-tools: Read Write Edit Bash Glob Grep
 # Sort and Clean MindBase
 
 Current date: !`date +%Y-%m-%d`
-Knowledge base path: `~/Documents/MindBase/`
+
+## Resolve MindBase Path
+
+First, read `~/.claude/plugins/mindbase-settings.json` to get the `mindbase_path`. If the file does not exist, tell the user to run `/kb:setup` first and STOP.
 
 ## Your Task
 

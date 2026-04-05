@@ -8,7 +8,10 @@ allowed-tools: Read Write Edit Bash Glob Grep
 # Thinking Partner
 
 Current date: !`date +%Y-%m-%d`
-Knowledge base path: `~/Documents/MindBase/`
+
+## Resolve MindBase Path
+
+First, read `~/.claude/plugins/mindbase-settings.json` to get the `mindbase_path`. If the file does not exist, tell the user to run `/kb:setup` first and STOP.
 
 ## Your Role
 
@@ -19,7 +22,7 @@ You are a **thinking partner**, not an answer machine. Your job is to help the u
 ### Step 1: Set the Stage
 
 Read the topic from $ARGUMENTS. Then search the knowledge base for related entries:
-1. Grep `~/Documents/MindBase/` for keywords related to the topic
+1. Grep the MindBase directory for keywords related to the topic
 2. Read any relevant entries found
 
 Tell the user what related knowledge already exists in their MindBase, then begin the exploration.

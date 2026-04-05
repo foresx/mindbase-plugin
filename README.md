@@ -16,13 +16,14 @@ We learn constantly through AI conversations, but most of that knowledge is lost
 | `/kb:think <topic>` | Guided thinking partner — explore ideas deeply through questions, then record insights |
 | `/kb:sort` | Health check: find duplicates, fix broken links, triage inbox, rebuild indexes |
 | `/kb:search <query>` | Search the knowledge base by keyword, tag, or question |
+| `/kb:setup` | Initialize MindBase — set knowledge base directory and create PARA structure |
 
 ## Knowledge Base Structure (PARA)
 
-MindBase uses the [PARA method](https://fortelabs.com/blog/para/) and writes to `~/Documents/MindBase/` (configurable in `agents/kb-agent/AGENT.md`):
+MindBase uses the [PARA method](https://fortelabs.com/blog/para/). The knowledge base directory is configured during setup (default: `~/Documents/MindBase/`):
 
 ```
-~/Documents/MindBase/
+$MINDBASE_PATH/
 ├── index.md              # Auto-maintained master index
 ├── 00_Inbox/             # Quick captures, unsorted
 ├── 01_Projects/          # Time-bound goals with deadlines
@@ -54,13 +55,18 @@ claude --plugin-dir /path/to/mindbase-plugin
 
 ## Setup
 
-After installing the plugin, create the knowledge base directory:
+After installing the plugin, run the setup command to configure your knowledge base directory:
 
-```bash
-mkdir -p ~/Documents/MindBase/{00_Inbox,01_Projects,02_Areas,03_Resources,04_Archive}
+```
+/kb:setup
 ```
 
-Or let `/kb:record` create it on first use.
+This will:
+1. Ask you where to store your knowledge base (default: `~/Documents/MindBase/`)
+2. Create the PARA directory structure
+3. Save the configuration to `~/.claude/plugins/mindbase-settings.json`
+
+The configuration persists across all conversations — you only need to run setup once.
 
 ## How It Works
 
@@ -69,7 +75,7 @@ Or let `/kb:record` create it on first use.
 3. Review and confirm what gets saved
 4. Entries are written to the appropriate PARA category with proper frontmatter and wikilinks
 5. Indexes are automatically updated
-6. Open `~/Documents/MindBase/` in Obsidian to browse, search, and explore connections
+6. Open your MindBase directory in Obsidian to browse, search, and explore connections
 
 Use `/kb:think` when you want to explore a topic deeply — it acts as a thinking partner that asks questions instead of giving answers, then optionally records the insights.
 
