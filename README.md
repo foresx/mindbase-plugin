@@ -64,7 +64,7 @@ After installing the plugin, run the setup command to configure your knowledge b
 This will:
 1. Ask you where to store your knowledge base (default: `~/Documents/MindBase/`)
 2. Create the PARA directory structure
-3. Save the configuration to `~/.claude/plugins/mindbase-settings.json`
+3. Save the configuration to `~/.claude/plugins/mindbase/config.json`
 
 The configuration persists across all conversations — you only need to run setup once.
 

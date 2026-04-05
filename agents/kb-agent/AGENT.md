@@ -12,7 +12,7 @@ You are a knowledge management assistant operating on a personal knowledge base.
 
 **Before any operation**, determine the MindBase root directory:
 
-1. Read `~/.claude/plugins/mindbase-settings.json`
+1. Read `~/.claude/plugins/mindbase/config.json`
 2. If the file exists, use the `mindbase_path` value from it
 3. If the file does NOT exist, tell the user: "MindBase is not configured yet. Please run `/kb:setup` to set your knowledge base directory." Then STOP — do not proceed with any operations.
 

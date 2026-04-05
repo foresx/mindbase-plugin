@@ -14,7 +14,7 @@ Guide the user through setting up their MindBase knowledge base. This should be 
 
 ### Step 1: Check Existing Settings
 
-Read `~/.claude/plugins/mindbase-settings.json` to check if MindBase is already configured.
+Read `~/.claude/plugins/mindbase/config.json` to check if MindBase is already configured.
 
 - If it exists, show the current path and ask if the user wants to reconfigure.
 - If it doesn't exist, proceed to Step 2.
@@ -44,7 +44,7 @@ Also create `CLAUDE.md` and `README.md` at root if not present (use the standard
 
 ### Step 4: Save Settings
 
-Write the configuration to `~/.claude/plugins/mindbase-settings.json`:
+Write the configuration to `~/.claude/plugins/mindbase/config.json` (create the `mindbase` directory if needed):
 
 ```json
 {
