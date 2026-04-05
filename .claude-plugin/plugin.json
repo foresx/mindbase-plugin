@@ -1,8 +1,15 @@
 {
   "name": "kb",
   "description": "MindBase — Personal knowledge base for AI-augmented learning",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "foresx"
-  }
+  },
+  "commands": [
+    "./skills/setup/SKILL.md",
+    "./skills/record/SKILL.md",
+    "./skills/search/SKILL.md",
+    "./skills/sort/SKILL.md",
+    "./skills/think/SKILL.md"
+  ]
 }
