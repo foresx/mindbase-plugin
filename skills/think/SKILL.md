@@ -66,7 +66,7 @@ If yes, follow the same recording process as `/kb:record`:
 1. Extract key insights from the thinking session
 2. Present them for confirmation
 3. Write to appropriate PARA directories (usually 02_Areas or 03_Resources)
-4. Update indexes and journal
+4. Update indexes
 
 ## Arguments
 

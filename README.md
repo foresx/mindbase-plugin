@@ -28,8 +28,7 @@ MindBase uses the [PARA method](https://fortelabs.com/blog/para/) and writes to 
 ├── 01_Projects/          # Time-bound goals with deadlines
 ├── 02_Areas/             # Ongoing domains of responsibility/interest
 ├── 03_Resources/         # Reference material, concepts, solutions
-├── 04_Archive/           # Completed/inactive content
-└── journal/              # Daily learning log
+└── 04_Archive/           # Completed/inactive content
 ```
 
 Each entry is a markdown file with YAML frontmatter (title, para category, tags, date, source, confidence) and structured sections. All entries use `[[wikilinks]]` for cross-references, making the knowledge base fully browsable in [Obsidian](https://obsidian.md).
@@ -58,7 +57,7 @@ claude --plugin-dir /path/to/mindbase-plugin
 After installing the plugin, create the knowledge base directory:
 
 ```bash
-mkdir -p ~/Documents/MindBase/{00_Inbox,01_Projects,02_Areas,03_Resources,04_Archive,journal}
+mkdir -p ~/Documents/MindBase/{00_Inbox,01_Projects,02_Areas,03_Resources,04_Archive}
 ```
 
 Or let `/kb:record` create it on first use.

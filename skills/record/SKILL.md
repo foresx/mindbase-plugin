@@ -64,7 +64,6 @@ After writing all entries:
 
 1. Update each affected `_index.md` — add new entries in alphabetical order
 2. Update root `index.md` — increment count, update date, add to category section and recent entries
-3. Update `journal/YYYY-MM-DD.md` — append what was recorded today
 
 ### Step 5: Confirm
 
@@ -74,7 +73,7 @@ Recorded N entries to MindBase:
 - 03_Resources/filename.md
 - 02_Areas/other-filename.md
 
-Updated indexes: 03_Resources/_index.md, index.md, journal/2026-04-05.md
+Updated indexes: 03_Resources/_index.md, index.md
 ```
 
 ## Arguments
