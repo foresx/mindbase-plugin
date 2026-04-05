@@ -1,0 +1,20 @@
+{
+  "name": "mindbase",
+  "owner": {
+    "name": "foresx",
+    "email": "satioasuka@gmail.com"
+  },
+  "metadata": {
+    "description": "Personal knowledge base plugin for Claude Code — capture, organize, and search knowledge from AI conversations",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "kb",
+      "source": "./",
+      "description": "MindBase — Record, sort, and search your personal knowledge base from AI conversations",
+      "category": "productivity",
+      "tags": ["knowledge-base", "notes", "obsidian", "learning", "productivity"]
+    }
+  ]
+}
