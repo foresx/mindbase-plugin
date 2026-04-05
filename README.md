@@ -40,25 +40,10 @@ MindBase also includes `AGENTS.md` and `CLAUDE.md` in the knowledge base directo
 
 ### Via Claude Code Marketplace
 
-Add to your `~/.claude/settings.json`:
-
-```json
-{
-  "extraKnownMarketplaces": {
-    "mindbase": {
-      "source": {
-        "source": "github",
-        "repo": "foresx/mindbase-plugin"
-      }
-    }
-  },
-  "enabledPlugins": {
-    "kb@mindbase": true
-  }
-}
 ```
-
-Then restart Claude Code.
+/plugin marketplace add foresx/mindbase-plugin
+/plugin install kb@mindbase
+```
 
 ### For Development
 
