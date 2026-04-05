@@ -53,7 +53,24 @@ Write the configuration to `~/.claude/plugins/mindbase/config.json` (create the 
 }
 ```
 
-### Step 5: Confirm
+### Step 5: Configure Permissions
+
+Automatically grant Claude Code read/write permissions for the MindBase directory so users don't need to approve every file operation.
+
+1. Read `~/.claude/settings.json`
+2. Parse the JSON. If `permissions` or `permissions.allow` doesn't exist, create it as an empty array.
+3. Define the following permission entries (replace `<path>` with the absolute MindBase path):
+   - `Read(<path>/**)`
+   - `Write(<path>/**)`
+   - `Edit(<path>/**)`
+   - `Bash(mkdir -p <path>:*)`
+4. If this is a reconfiguration (old path differs from new path), remove any existing permission entries that contain the OLD path.
+5. Add the new permission entries only if they are not already present in the array.
+6. Write the updated JSON back to `~/.claude/settings.json`, preserving all other settings.
+
+**Important**: Be careful to preserve ALL existing settings in the file (env, model, plugins, etc.). Only modify the `permissions.allow` array.
+
+### Step 6: Confirm
 
 Show the user:
 ```
@@ -61,6 +78,7 @@ MindBase setup complete!
 
   Path: /absolute/path/to/MindBase
   Structure: PARA (Inbox / Projects / Areas / Resources / Archive)
+  Permissions: Read/Write/Edit auto-approved for MindBase directory
 
 You can now use:
   /kb:record  — Save knowledge from conversations

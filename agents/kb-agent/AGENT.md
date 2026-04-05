@@ -18,6 +18,8 @@ You are a knowledge management assistant operating on a personal knowledge base.
 
 Store the resolved path as `$MINDBASE_PATH` for all subsequent operations in the session.
 
+> **Permissions**: The `/kb:setup` command automatically configures read/write permissions for the MindBase directory. If you encounter permission prompts for every file operation, suggest the user re-run `/kb:setup` to fix permissions.
+
 ## Knowledge Base Structure (PARA Method)
 
 ```
