@@ -18,12 +18,13 @@ Perform a health check and cleanup of the MindBase knowledge base.
 
 ### Step 1: Scan All Entries
 
-Read all .md files across concepts/, solutions/, insights/, references/ directories.
+Read all .md files across 00_Inbox/, 01_Projects/, 02_Areas/, 03_Resources/, 04_Archive/ directories.
 For each entry, check:
-- Frontmatter is complete and valid (title, category, tags, created, source, confidence)
-- File is in the correct category directory (matches frontmatter category)
+- Frontmatter is complete and valid (title, para, tags, created, source, confidence)
+- File is in the correct PARA directory (matches frontmatter `para` field)
 - Filename follows kebab-case convention
 - Wikilinks point to existing entries
+- Inbox items that should be sorted into other categories
 
 ### Step 2: Identify Issues
 
@@ -36,9 +37,10 @@ Total entries: N
 
 Issues found:
 - [x] 2 entries with missing frontmatter fields
-- [x] 1 entry in wrong category directory
+- [x] 1 entry in wrong PARA category
 - [x] 3 broken wikilinks
 - [x] 2 potential duplicates (similar titles/content)
+- [x] 5 items in Inbox that could be categorized
 - [x] Indexes out of sync
 
 No issues:
@@ -53,6 +55,7 @@ For each issue category, propose fixes and ask user to approve:
 - Wrong category: suggest moving the file
 - Broken wikilinks: suggest corrections or removal
 - Duplicates: show both entries, suggest merging
+- Inbox triage: suggest PARA categories for inbox items
 - Index sync: rebuild automatically
 
 ### Step 4: Rebuild Indexes
@@ -66,5 +69,6 @@ After all fixes:
 
 - Empty: full health check
 - "index": only rebuild indexes
+- "inbox": only triage inbox items
 - "duplicates": only check for duplicates
 - "links": only check wikilinks

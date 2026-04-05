@@ -21,12 +21,12 @@ Parse $ARGUMENTS as the search query. It could be:
 - A topic keyword (e.g., "coroutines")
 - A tag (e.g., "architecture")
 - A question (e.g., "how does event sourcing work")
-- A category filter (e.g., "category:solutions")
+- A PARA filter (e.g., "para:projects", "para:resources")
 
 ### Step 2: Search
 
 1. First read `index.md` for an overview
-2. Search filenames via Glob for pattern matches
+2. Search filenames via Glob across 00_Inbox/, 01_Projects/, 02_Areas/, 03_Resources/, 04_Archive/
 3. Search file contents via Grep for keyword matches
 4. Read frontmatter of matched files for tags and metadata
 
@@ -37,11 +37,11 @@ Show results ranked by relevance:
 ```
 Found N entries matching "query":
 
-1. **[[entry-name]]** (concepts)
+1. **[[entry-name]]** (03_Resources)
    Tags: tag1, tag2
    Summary: first line of the Summary section
 
-2. **[[other-entry]]** (solutions)
+2. **[[other-entry]]** (02_Areas)
    Tags: tag1, tag3
    Summary: first line of the Summary section
 ```

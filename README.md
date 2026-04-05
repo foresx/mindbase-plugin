@@ -13,24 +13,26 @@ We learn constantly through AI conversations, but most of that knowledge is lost
 | Command | Description |
 |---------|-------------|
 | `/kb:record` | Extract knowledge from the current conversation and save to MindBase |
-| `/kb:sort` | Health check: find duplicates, fix broken links, rebuild indexes |
+| `/kb:think <topic>` | Guided thinking partner — explore ideas deeply through questions, then record insights |
+| `/kb:sort` | Health check: find duplicates, fix broken links, triage inbox, rebuild indexes |
 | `/kb:search <query>` | Search the knowledge base by keyword, tag, or question |
 
-## Knowledge Base Structure
+## Knowledge Base Structure (PARA)
 
-MindBase writes to `~/Documents/MindBase/` (configurable in `agents/kb-agent/AGENT.md`):
+MindBase uses the [PARA method](https://fortelabs.com/blog/para/) and writes to `~/Documents/MindBase/` (configurable in `agents/kb-agent/AGENT.md`):
 
 ```
 ~/Documents/MindBase/
 ├── index.md              # Auto-maintained master index
-├── concepts/             # Technical concepts, architecture, patterns
-├── solutions/            # Problem-solution pairs
-├── insights/             # Reflections, judgments, experience
-├── references/           # External resources with summaries
+├── 00_Inbox/             # Quick captures, unsorted
+├── 01_Projects/          # Time-bound goals with deadlines
+├── 02_Areas/             # Ongoing domains of responsibility/interest
+├── 03_Resources/         # Reference material, concepts, solutions
+├── 04_Archive/           # Completed/inactive content
 └── journal/              # Daily learning log
 ```
 
-Each entry is a markdown file with YAML frontmatter (title, category, tags, date, source, confidence) and structured sections. All entries use `[[wikilinks]]` for cross-references, making the knowledge base fully browsable in [Obsidian](https://obsidian.md).
+Each entry is a markdown file with YAML frontmatter (title, para category, tags, date, source, confidence) and structured sections. All entries use `[[wikilinks]]` for cross-references, making the knowledge base fully browsable in [Obsidian](https://obsidian.md).
 
 ## Cross-Tool Compatibility
 
@@ -56,7 +58,7 @@ claude --plugin-dir /path/to/mindbase-plugin
 After installing the plugin, create the knowledge base directory:
 
 ```bash
-mkdir -p ~/Documents/MindBase/{concepts,solutions,insights,references,journal}
+mkdir -p ~/Documents/MindBase/{00_Inbox,01_Projects,02_Areas,03_Resources,04_Archive,journal}
 ```
 
 Or let `/kb:record` create it on first use.
@@ -66,9 +68,11 @@ Or let `/kb:record` create it on first use.
 1. Have a conversation with any AI tool — learn something new
 2. Run `/kb:record` — the AI analyzes the conversation and extracts knowledge points
 3. Review and confirm what gets saved
-4. Entries are written to the appropriate category with proper frontmatter and wikilinks
+4. Entries are written to the appropriate PARA category with proper frontmatter and wikilinks
 5. Indexes are automatically updated
 6. Open `~/Documents/MindBase/` in Obsidian to browse, search, and explore connections
+
+Use `/kb:think` when you want to explore a topic deeply — it acts as a thinking partner that asks questions instead of giving answers, then optionally records the insights.
 
 Over time, your knowledge base grows into a personal wiki that:
 - Helps you remember what you've learned

@@ -12,21 +12,23 @@ Knowledge base path: `~/Documents/MindBase/`
 
 ## Your Task
 
-Analyze the current conversation and extract valuable knowledge to save into the MindBase knowledge base.
+Analyze the current conversation and extract valuable knowledge to save into the MindBase knowledge base using the PARA method.
 
 ## Process
 
 ### Step 1: Extract Knowledge Points
 
 Review the entire conversation and identify distinct pieces of knowledge worth recording. Look for:
-- Technical concepts explained or discovered
-- Problems solved and their solutions
-- Insights, lessons learned, or experience-based judgments
-- Useful external resources mentioned
+- Technical concepts explained or discovered → **03_Resources**
+- Problems solved and their solutions → **03_Resources**
+- Insights, lessons learned, experience-based judgments → **02_Areas**
+- Project-specific decisions or progress → **01_Projects**
+- Useful external resources mentioned → **03_Resources**
+- Quick ideas or unprocessed thoughts → **00_Inbox**
 
 For each knowledge point, determine:
 - A clear title
-- The appropriate category (concepts / solutions / insights / references)
+- The appropriate PARA category (inbox / projects / areas / resources)
 - Relevant tags
 - Confidence level (high = verified/tested, medium = understood but untested, low = hearsay/uncertain)
 
@@ -37,11 +39,11 @@ Show the user a summary of what you plan to record:
 ```
 I found N knowledge points to record:
 
-1. [Title] → concepts/filename.md
+1. [Title] → 03_Resources/filename.md
    Tags: [tag1, tag2]
    Summary: one line
 
-2. [Title] → solutions/filename.md
+2. [Title] → 02_Areas/filename.md
    Tags: [tag1, tag2]
    Summary: one line
 ```
@@ -52,9 +54,9 @@ Ask the user to confirm, modify, or skip any entries.
 
 For each confirmed entry:
 
-1. Check if a similar entry already exists (search by filename and tags in the category)
+1. Check if a similar entry already exists (search by filename and tags)
 2. If exists: show the user and ask whether to merge/update or create new
-3. If new: write the entry file to the appropriate category directory using the standard format defined in kb-agent
+3. If new: write the entry file to the appropriate PARA directory using the standard format defined in kb-agent
 
 ### Step 4: Update Indexes
 
@@ -69,10 +71,10 @@ After writing all entries:
 Show the user a final summary:
 ```
 Recorded N entries to MindBase:
-- concepts/filename.md
-- solutions/other-filename.md
+- 03_Resources/filename.md
+- 02_Areas/other-filename.md
 
-Updated indexes: concepts/_index.md, index.md, journal/2026-04-05.md
+Updated indexes: 03_Resources/_index.md, index.md, journal/2026-04-05.md
 ```
 
 ## Arguments
@@ -89,3 +91,4 @@ If the user provides $ARGUMENTS, use it as a hint for what to focus on:
 - Keep each entry focused on ONE concept/solution/insight
 - Write in the same language the knowledge was discussed in (Chinese or English)
 - Use [[wikilinks]] for cross-references between entries
+- When unsure about PARA category, default to 00_Inbox
