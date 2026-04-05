@@ -2,5 +2,7 @@
   "name": "kb",
   "description": "MindBase — Personal knowledge base for AI-augmented learning",
   "version": "0.1.0",
-  "author": "Ian"
+  "author": {
+    "name": "foresx"
+  }
 }
