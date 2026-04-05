@@ -1,5 +1,4 @@
 ---
-name: think
 description: Guided thinking partner — explore ideas deeply through questions, then record insights
 disable-model-invocation: true
 allowed-tools: Read Write Edit Bash Glob Grep

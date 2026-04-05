@@ -1,5 +1,4 @@
 ---
-name: record
 description: Extract knowledge from the current conversation and save it to MindBase
 disable-model-invocation: true
 allowed-tools: Read Write Edit Bash Glob Grep

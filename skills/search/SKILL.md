@@ -1,5 +1,4 @@
 ---
-name: search
 description: Search the MindBase knowledge base for relevant entries
 disable-model-invocation: true
 allowed-tools: Read Glob Grep

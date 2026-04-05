@@ -1,5 +1,4 @@
 ---
-name: setup
 description: Initialize MindBase — set knowledge base directory and create PARA structure
 disable-model-invocation: true
 allowed-tools: Read Write Edit Bash Glob AskUserQuestion

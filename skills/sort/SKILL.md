@@ -1,5 +1,4 @@
 ---
-name: sort
 description: Clean up, deduplicate, and reorganize the MindBase knowledge base
 disable-model-invocation: true
 allowed-tools: Read Write Edit Bash Glob Grep
