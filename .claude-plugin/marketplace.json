@@ -10,7 +10,7 @@
   },
   "plugins": [
     {
-      "name": "kb",
+      "name": "mb",
       "source": "./",
       "description": "MindBase — Record, sort, and search your personal knowledge base from AI conversations",
       "category": "productivity",
