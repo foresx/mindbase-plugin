@@ -1,5 +1,5 @@
 ---
-name: kb-agent
+name: mindbase
 description: Shared agent for all MindBase knowledge base operations
 allowed-tools: Read Write Edit Bash Glob Grep
 ---
